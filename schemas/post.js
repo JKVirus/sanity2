@@ -64,7 +64,7 @@ export default {
     },
     {
       name: 'module',
-      title: 'Module',
+      title: 'Post Entity',
       type: 'reference',
       to: [{type: 'mediaSeries'}, {type: 'conference'}], 
       options: {
