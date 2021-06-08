@@ -4,6 +4,16 @@ export default {
     type: 'document',
     fields: [
       {
+        title: 'Page',
+        name: 'page',
+        type: 'reference',
+        to: [
+            {
+            type: 'page',
+            },
+        ],
+      },
+      {
         name: 'seriesTitle',
         title: 'Series Title',
         type: 'string',
