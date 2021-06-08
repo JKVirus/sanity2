@@ -3,20 +3,20 @@ export default {
     title: 'Taxonomy',
     type: 'document',
     fields: [
+        {
+            title: 'Parent',
+            name: 'parent',
+            type: 'reference',
+            to: [
+              {
+                type: 'taxonomy',
+              },
+            ],
+          },
       {
         name: 'title',
         title: 'Title',
         type: 'string',
-      },
-      {
-        title: 'Parent',
-        name: 'parent',
-        type: 'reference',
-        to: [
-          {
-            type: 'taxonomy',
-          },
-        ],
       },
       {
         name: 'definition',

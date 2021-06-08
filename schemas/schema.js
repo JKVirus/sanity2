@@ -12,6 +12,8 @@ import author from './author'
 import page from './page'
 import taxonomy from './taxonomy'
 import module from './module'
+import mediaSeries from './mediaSeries'
+import conference from './conference'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -28,6 +30,8 @@ export default createSchema({
     author,
     category,
     module,
+    mediaSeries,
+    conference,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

@@ -4,11 +4,6 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    },
-    {
       title: 'Parent',
       name: 'parent',
       type: 'reference',
@@ -17,6 +12,11 @@ export default {
           type: 'category',
         },
       ],
+    },
+    {
+      name: 'title',
+      title: 'Title',
+      type: 'string',
     },
     {
       name: 'description',
