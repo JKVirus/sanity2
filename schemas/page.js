@@ -20,7 +20,6 @@ export default {
           maxLength: 96,
         },
       },
-
       {
         title: 'Module Assignment',
         name: 'moduleAssignment',
@@ -45,7 +44,13 @@ export default {
           {
             title: 'Module',
             name: 'module',
+            description: 'format: Module (variables available)',
             type: 'module',
+          },
+          {
+            name: 'urlDefinition',
+            title: 'URL Definition',
+            type: 'string',
           },
           {
             title: 'Taxonomy',
@@ -58,7 +63,7 @@ export default {
           },
         ]
       },
-
+      /*
       {
         title: 'SEO',
         name: 'seo',
@@ -85,6 +90,7 @@ export default {
           }
         ]
       }
+      */
      
     ],
   

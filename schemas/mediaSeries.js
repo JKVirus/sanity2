@@ -4,7 +4,7 @@ export default {
     type: 'document',
     fields: [
       {
-        title: 'Page',
+        title: 'Root Page',
         name: 'page',
         type: 'reference',
         to: [

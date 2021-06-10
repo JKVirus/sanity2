@@ -29,8 +29,8 @@ export default {
       title: 'By Group',
       name: 'byGroup',
       by: [
-        { field: 'title', direction: 'asc' },
         { field: 'parent.title', direction: 'asc' },
+        { field: 'title', direction: 'asc' },
       ],
     },
   ],

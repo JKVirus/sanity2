@@ -24,8 +24,8 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
-    page,
     taxonomy,
+    page,
     post,
     author,
     category,

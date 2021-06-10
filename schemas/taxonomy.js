@@ -18,11 +18,29 @@ export default {
         title: 'Title',
         type: 'string',
       },
-      {
-        name: 'definition',
-        title: 'Definition',
-        type: 'string',
-      },
     ],
-  }
+      orderings: [
+    {
+      title: 'By Group',
+      name: 'byGroup',
+      by: [
+        { field: 'parent.title', direction: 'asc' },
+        { field: 'title', direction: 'asc' },
+      ],
+    },
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      parent: 'parent.title',
+    },
+    prepare(selection) {
+      const { title, parent } = selection
+      return {
+        title: title,
+        subtitle: `> ${parent ? parent : ''}`,
+      }
+    },
+  },
+}
   

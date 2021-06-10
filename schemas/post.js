@@ -56,11 +56,18 @@ export default {
       ]
     },
     {
-      name: 'page',
-      title: 'Page',
-      description: 'Location where this post will appear',
+      name: 'contentPlacement',
+      title: 'Content Placement',
+      description: 'Location where this post will also appear',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'page'}}],
+      of: [{type: 'reference', to: {type: 'taxonomy'}}],
+    },
+    {
+      name: 'page',
+      title: 'Page Origin',
+      description: 'Main Location where this post will live',
+      type: 'reference',
+      to: {type: 'page'},
     },
     {
       name: 'module',
@@ -71,22 +78,19 @@ export default {
         filter: async({document}) => {
           // Always make sure to check for document properties
           // before attempting to use them
-          console.log('document.page:', document.page)
+
           if (!document.page || document.page.length < 1) {
             return {
               filter: '1 == 0'
             }
           }
 
-          let page_id = document.page[0]._ref
+          let page_id = document.page._ref
           const client = require('part:@sanity/base/client')
           const query = `*[_type == 'page' && _id == '${page_id}'][0]{"module": moduleAssignment.module}`
-          console.log('query:', query)
+
           const result = await client.fetch(query)
           const module = result.module
-
-          console.log('module:', module)
-          console.log('page:', document.page)
 
           return {
             filter: `_type == '${module}' && defined(page) && page._ref == '${page_id}' `

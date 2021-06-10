@@ -4,22 +4,22 @@ export default {
     type: 'document',
     fields: [
       {
-        title: 'Page',
-        name: 'page',
-        type: 'reference',
-        to: [
-            {
-            type: 'page',
-            },
-        ],
-      },
-      {
         title: 'Parent',
         name: 'parent',
         type: 'reference',
         to: [
             {
             type: 'conference',
+            },
+        ],
+      },
+      {
+        title: 'Root Page',
+        name: 'page',
+        type: 'reference',
+        to: [
+            {
+            type: 'page',
             },
         ],
       },
@@ -51,5 +51,18 @@ export default {
         },
       },
     ],
+    preview: {
+      select: {
+        title: 'conferenceTitle',
+        parent: 'parent.conferenceTitle',
+      },
+      prepare(selection) {
+        const { title, parent } = selection
+        return {
+          title: title,
+          subtitle: `> ${parent ? parent : ''}`,
+        }
+      },
+    },
   }
   
